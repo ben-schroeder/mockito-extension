@@ -9,8 +9,15 @@ import java.util.Map;
 import java.util.Set;
 import java.util.regex.Pattern;
 
+/**
+ * Mockito {@link ArgumentMatchers} as an interface to use in test classes.
+ * <p>
+ * Inspired by https://blog.javabien.net/2014/04/23/what-if-assertj-used-java-8/
+ * and https://github.com/szpak/mockito-java8
+ *
+ * @author Benjamin Schröder
+ */
 public interface WithArgumentMatchers {
-
 
     /**
      * @see ArgumentMatchers#any()
