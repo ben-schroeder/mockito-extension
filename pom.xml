@@ -45,7 +45,7 @@
         <dependency>
             <groupId>eu.benschroeder</groupId>
             <artifactId>assertj-extension</artifactId>
-            <version>3.15.0</version>
+            <version>3.16.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
