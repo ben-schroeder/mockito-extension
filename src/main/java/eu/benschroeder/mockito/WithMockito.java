@@ -4,6 +4,7 @@ import org.mockito.CheckReturnValue;
 import org.mockito.InOrder;
 import org.mockito.Incubating;
 import org.mockito.MockSettings;
+import org.mockito.MockedStatic;
 import org.mockito.MockingDetails;
 import org.mockito.Mockito;
 import org.mockito.MockitoFramework;
@@ -83,6 +84,42 @@ public interface WithMockito extends WithArgumentMatchers {
         return Mockito.spy(classToSpy);
     }
 
+    /**
+     * @see Mockito#mockStatic(Class)
+     */
+    @Incubating
+    @CheckReturnValue
+    default <T> MockedStatic<T> mockStatic(final Class<T> classToMock) {
+        return Mockito.mockStatic(classToMock);
+    }
+
+    /**
+     * @see Mockito#mockStatic(Class, Answer)
+     */
+    @Incubating
+    @CheckReturnValue
+    default <T> MockedStatic<T> mockStatic(final Class<T> classToMock, final Answer defaultAnswer) {
+        return Mockito.mockStatic(classToMock, defaultAnswer);
+    }
+
+    /**
+     * @see Mockito#mockStatic(Class, String)
+     */
+    @Incubating
+    @CheckReturnValue
+    default <T> MockedStatic<T> mockStatic(final Class<T> classToMock, final String name) {
+        return Mockito.mockStatic(classToMock, name);
+    }
+
+    /**
+     * @see Mockito#mockStatic(Class, MockSettings)
+     */
+    @Incubating
+    @CheckReturnValue
+    default <T> MockedStatic<T> mockStatic(final Class<T> classToMock, final MockSettings mockSettings) {
+        return Mockito.mockStatic(classToMock, mockSettings);
+    }
+    
     /**
      * @see Mockito#when(T)
      */
