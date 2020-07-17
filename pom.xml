@@ -9,7 +9,7 @@
     </parent>
 
     <artifactId>mockito-extension</artifactId>
-    <version>3.4.0-SNAPSHOT</version>
+    <version>3.4.2-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>mockito-extension</name>
@@ -26,7 +26,10 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <mockito.version>3.4.0</mockito.version>
+        <mockito.version>3.4.2</mockito.version>
+        <assertj.version>3.16.1</assertj.version>
+        <junit-jupiter.version>5.6.2</junit-jupiter.version>
+        <reflections.version>0.9.12</reflections.version>
     </properties>
 
     <dependencies>
@@ -39,19 +42,19 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.6.2</version>
+            <version>${junit-jupiter.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>eu.benschroeder</groupId>
             <artifactId>assertj-extension</artifactId>
-            <version>3.16.1</version>
+            <version>${assertj.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.reflections</groupId>
             <artifactId>reflections</artifactId>
-            <version>0.9.12</version>
+            <version>${reflections.version}</version>
             <scope>test</scope>
         </dependency>
 
