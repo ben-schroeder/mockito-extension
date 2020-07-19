@@ -3,7 +3,7 @@
 [![License](https://img.shields.io/github/license/ben-schroeder/mockito-extension)](https://raw.githubusercontent.com/ben-schroeder/mockito-extension/master/LICENSE)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/eu.benschroeder/mockito-extension/badge.svg)](https://maven-badges.herokuapp.com/maven-central/eu.benschroeder/mockito-extension)
 
-Convenience Extension to use assertj without static imports. 
+Convenience Extension to use mockito without static imports. 
 
 Inspired by https://blog.javabien.net/2014/04/23/what-if-assertj-used-java-8/ and https://github.com/szpak/mockito-java8
 
@@ -13,7 +13,7 @@ Inspired by https://blog.javabien.net/2014/04/23/what-if-assertj-used-java-8/ an
 
 ## Versioning
 
-The version corresonds with the used version of mockito, so the same version can be used for both. The first release exists for mockito 3.2.4
+The version corresponds with the used version of mockito, so the same version can be used for both. The first release exists for mockito 3.2.4
 
 ```
 <dependency>
