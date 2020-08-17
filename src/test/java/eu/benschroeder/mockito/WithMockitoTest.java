@@ -9,7 +9,7 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.Set;
 
-public class WithMockitoTest implements WithAssertJ {
+class WithMockitoTest implements WithAssertJ {
 
     @Test
     @SuppressWarnings("unchecked")
