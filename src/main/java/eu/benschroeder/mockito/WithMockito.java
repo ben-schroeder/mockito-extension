@@ -4,6 +4,7 @@ import org.mockito.CheckReturnValue;
 import org.mockito.InOrder;
 import org.mockito.Incubating;
 import org.mockito.MockSettings;
+import org.mockito.MockedConstruction;
 import org.mockito.MockedStatic;
 import org.mockito.MockingDetails;
 import org.mockito.Mockito;
@@ -16,6 +17,8 @@ import org.mockito.stubbing.Stubber;
 import org.mockito.verification.VerificationAfterDelay;
 import org.mockito.verification.VerificationMode;
 import org.mockito.verification.VerificationWithTimeout;
+
+import java.util.function.Function;
 
 /**
  * {@link Mockito} as an interface to use in test classes.
@@ -119,7 +122,70 @@ public interface WithMockito extends WithArgumentMatchers {
     default <T> MockedStatic<T> mockStatic(final Class<T> classToMock, final MockSettings mockSettings) {
         return Mockito.mockStatic(classToMock, mockSettings);
     }
-    
+
+    /**
+     * @see Mockito#mockConstructionWithAnswer(Class, Answer, Answer[])
+     */
+    @Incubating
+    @CheckReturnValue
+    default <T> MockedConstruction<T> mockConstructionWithAnswer(final Class<T> classToMock, final Answer defaultAnswer, final Answer... additionalAnswers) {
+        return Mockito.mockConstructionWithAnswer(classToMock, defaultAnswer, additionalAnswers);
+    }
+
+    /**
+     * @see Mockito#mockConstruction(Class)
+     */
+    @Incubating
+    @CheckReturnValue
+    default <T> MockedConstruction<T> mockConstruction(final Class<T> classToMock) {
+        return Mockito.mockConstruction(classToMock);
+    }
+
+    /**
+     * @see Mockito#mockConstruction(Class, MockedConstruction.MockInitializer)
+     */
+    @Incubating
+    @CheckReturnValue
+    default <T> MockedConstruction<T> mockConstruction(final Class<T> classToMock, final MockedConstruction.MockInitializer<T> mockInitializer) {
+        return Mockito.mockConstruction(classToMock, mockInitializer);
+    }
+
+    /**
+     * @see Mockito#mockConstruction(Class, MockSettings)
+     */
+    @Incubating
+    @CheckReturnValue
+    default <T> MockedConstruction<T> mockConstruction(final Class<T> classToMock, final MockSettings mockSettings) {
+        return Mockito.mockConstruction(classToMock, mockSettings);
+    }
+
+    /**
+     * @see Mockito#mockConstruction(Class, Function)
+     */
+    @Incubating
+    @CheckReturnValue
+    default <T> MockedConstruction<T> mockConstruction(final Class<T> classToMock, final Function<MockedConstruction.Context, MockSettings> mockSettingsFactory) {
+        return Mockito.mockConstruction(classToMock, mockSettingsFactory);
+    }
+
+    /**
+     * @see Mockito#mockConstruction(Class, MockSettings, MockedConstruction.MockInitializer)
+     */
+    @Incubating
+    @CheckReturnValue
+    default <T> MockedConstruction<T> mockConstruction(final Class<T> classToMock, final MockSettings mockSettings, final MockedConstruction.MockInitializer<T> mockInitializer) {
+        return Mockito.mockConstruction(classToMock, mockSettings, mockInitializer);
+    }
+
+    /**
+     * @see Mockito#mockConstruction(Class, Function, MockedConstruction.MockInitializer)
+     */
+    @Incubating
+    @CheckReturnValue
+    default <T> MockedConstruction<T> mockConstruction(final Class<T> classToMock, final Function<MockedConstruction.Context, MockSettings> mockSettingsFactory, final MockedConstruction.MockInitializer<T> mockInitializer) {
+        return Mockito.mockConstruction(classToMock, mockSettingsFactory, mockInitializer);
+    }
+
     /**
      * @see Mockito#when(T)
      */
