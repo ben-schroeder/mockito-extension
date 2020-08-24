@@ -22,3 +22,26 @@ The version corresponds with the used version of mockito, so the same version ca
   <version>${mockito.version}</version>
 </dependency>
 ```
+
+## Usage
+
+```
+import eu.benschroeder.mockito.WithMockito;
+
+public class MyBDDStyleUnitTest implements WithMockito {
+
+    @Test
+    void testAnyMethod() {
+        
+        String anyParam = randomAlphabetic();
+
+        given(myService.anyMethod(anyParam)).willReturn("anyReturnValue");
+
+        ...
+
+        then(myService).should().anyMethod(anyParam);
+
+    }
+
+}
+```
