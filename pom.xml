@@ -5,11 +5,11 @@
     <parent>
         <groupId>eu.benschroeder</groupId>
         <artifactId>oss-parent</artifactId>
-        <version>2</version>
+        <version>3</version>
     </parent>
 
     <artifactId>mockito-extension</artifactId>
-    <version>3.5.5-SNAPSHOT</version>
+    <version>3.5.6-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>mockito-extension</name>
@@ -26,8 +26,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <mockito.version>3.5.5</mockito.version>
-        <assertj.version>3.16.1</assertj.version>
+        <mockito.version>3.5.6</mockito.version>
+        <assertj.version>3.17.0</assertj.version>
         <junit-jupiter.version>5.6.2</junit-jupiter.version>
         <reflections.version>0.9.12</reflections.version>
     </properties>

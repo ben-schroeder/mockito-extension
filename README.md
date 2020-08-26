@@ -25,10 +25,33 @@ The version corresponds with the used version of mockito, so the same version ca
 
 ## Usage
 
+### Use interface WithMockito
 ```
 import eu.benschroeder.mockito.WithMockito;
 
-public class MyBDDStyleUnitTest implements WithMockito {
+class MyUnitTest implements WithMockito {
+
+    @Test
+    void testAnyMethod() {
+        
+        String anyParam = randomAlphabetic();
+
+        when(myService.anyMethod(anyParam)).thenReturn("anyReturnValue");
+
+        ...
+
+        verify(myService, times(2)).anyMethod(anyParam);
+        verify(myService, never()).anyOtherMethod(anyParam);
+
+    }
+
+}
+```
+### Use interface WithBDDMockito for BDD-style
+```
+import eu.benschroeder.mockito.WithBDDMockito;
+
+class MyBDDStyleUnitTest implements WithBDDMockito {
 
     @Test
     void testAnyMethod() {
@@ -40,7 +63,7 @@ public class MyBDDStyleUnitTest implements WithMockito {
         ...
 
         then(myService).should().anyMethod(anyParam);
-
+        then(myService).should(never()).anyOtherMethod(anyParam);
     }
 
 }
