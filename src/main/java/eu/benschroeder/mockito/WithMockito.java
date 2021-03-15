@@ -218,6 +218,13 @@ public interface WithMockito extends WithArgumentMatchers {
     }
 
     /**
+     * @see Mockito#clearAllCaches()
+     */
+    default void clearAllCaches() {
+        Mockito.clearAllCaches();
+    }
+
+    /**
      * @see Mockito#clearInvocations(T...)
      */
     default <T> void clearInvocations(final T... mocks) {
