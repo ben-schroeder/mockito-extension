@@ -1,5 +1,5 @@
 # mockito-extension
-[![Build Status](https://travis-ci.com/ben-schroeder/mockito-extension.svg?branch=master)](https://travis-ci.com/ben-schroeder/mockito-extension)
+[![Build Status](https://github.com/ben-schroeder/mockito-extension/actions/workflows/deploy.yml/badge.svg)](https://github.com/ben-schroeder/mockito-extension/actions/workflows/deploy.yml)
 [![License](https://img.shields.io/github/license/ben-schroeder/mockito-extension)](https://raw.githubusercontent.com/ben-schroeder/mockito-extension/master/LICENSE)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/eu.benschroeder/mockito-extension/badge.svg)](https://maven-badges.herokuapp.com/maven-central/eu.benschroeder/mockito-extension)
 
