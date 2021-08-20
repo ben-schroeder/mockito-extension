@@ -1,8 +1,6 @@
 package eu.benschroeder.mockito;
 
-import org.mockito.CheckReturnValue;
 import org.mockito.InOrder;
-import org.mockito.Incubating;
 import org.mockito.MockSettings;
 import org.mockito.MockedConstruction;
 import org.mockito.MockedStatic;
@@ -33,7 +31,6 @@ public interface WithMockito extends WithArgumentMatchers {
     /**
      * @see Mockito#mock(Class)
      */
-    @CheckReturnValue
     default <T> T mock(final Class<T> classToMock) {
         return Mockito.mock(classToMock);
     }
@@ -41,7 +38,6 @@ public interface WithMockito extends WithArgumentMatchers {
     /**
      * @see Mockito#mock(Class, String)
      */
-    @CheckReturnValue
     default <T> T mock(final Class<T> classToMock, final String name) {
         return Mockito.mock(classToMock, name);
     }
@@ -49,7 +45,6 @@ public interface WithMockito extends WithArgumentMatchers {
     /**
      * @see Mockito#mockingDetails(Object)
      */
-    @CheckReturnValue
     default MockingDetails mockingDetails(final Object toInspect) {
         return Mockito.mockingDetails(toInspect);
     }
@@ -57,7 +52,6 @@ public interface WithMockito extends WithArgumentMatchers {
     /**
      * @see Mockito#mock(Class, Answer)
      */
-    @CheckReturnValue
     default <T> T mock(final Class<T> classToMock, final Answer defaultAnswer) {
         return Mockito.mock(classToMock, defaultAnswer);
     }
@@ -65,7 +59,6 @@ public interface WithMockito extends WithArgumentMatchers {
     /**
      * @see Mockito#mock(Class, MockSettings)
      */
-    @CheckReturnValue
     default <T> T mock(final Class<T> classToMock, final MockSettings mockSettings) {
         return Mockito.mock(classToMock, mockSettings);
     }
@@ -73,7 +66,6 @@ public interface WithMockito extends WithArgumentMatchers {
     /**
      * @see Mockito#spy(T)
      */
-    @CheckReturnValue
     default <T> T spy(final T object) {
         return Mockito.spy(object);
     }
@@ -81,8 +73,6 @@ public interface WithMockito extends WithArgumentMatchers {
     /**
      * @see Mockito#spy(Class)
      */
-    @Incubating
-    @CheckReturnValue
     default <T> T spy(final Class<T> classToSpy) {
         return Mockito.spy(classToSpy);
     }
@@ -90,8 +80,6 @@ public interface WithMockito extends WithArgumentMatchers {
     /**
      * @see Mockito#mockStatic(Class)
      */
-    @Incubating
-    @CheckReturnValue
     default <T> MockedStatic<T> mockStatic(final Class<T> classToMock) {
         return Mockito.mockStatic(classToMock);
     }
@@ -99,8 +87,6 @@ public interface WithMockito extends WithArgumentMatchers {
     /**
      * @see Mockito#mockStatic(Class, Answer)
      */
-    @Incubating
-    @CheckReturnValue
     default <T> MockedStatic<T> mockStatic(final Class<T> classToMock, final Answer defaultAnswer) {
         return Mockito.mockStatic(classToMock, defaultAnswer);
     }
@@ -108,8 +94,6 @@ public interface WithMockito extends WithArgumentMatchers {
     /**
      * @see Mockito#mockStatic(Class, String)
      */
-    @Incubating
-    @CheckReturnValue
     default <T> MockedStatic<T> mockStatic(final Class<T> classToMock, final String name) {
         return Mockito.mockStatic(classToMock, name);
     }
@@ -117,8 +101,6 @@ public interface WithMockito extends WithArgumentMatchers {
     /**
      * @see Mockito#mockStatic(Class, MockSettings)
      */
-    @Incubating
-    @CheckReturnValue
     default <T> MockedStatic<T> mockStatic(final Class<T> classToMock, final MockSettings mockSettings) {
         return Mockito.mockStatic(classToMock, mockSettings);
     }
@@ -126,8 +108,6 @@ public interface WithMockito extends WithArgumentMatchers {
     /**
      * @see Mockito#mockConstructionWithAnswer(Class, Answer, Answer[])
      */
-    @Incubating
-    @CheckReturnValue
     default <T> MockedConstruction<T> mockConstructionWithAnswer(final Class<T> classToMock, final Answer defaultAnswer, final Answer... additionalAnswers) {
         return Mockito.mockConstructionWithAnswer(classToMock, defaultAnswer, additionalAnswers);
     }
@@ -135,8 +115,6 @@ public interface WithMockito extends WithArgumentMatchers {
     /**
      * @see Mockito#mockConstruction(Class)
      */
-    @Incubating
-    @CheckReturnValue
     default <T> MockedConstruction<T> mockConstruction(final Class<T> classToMock) {
         return Mockito.mockConstruction(classToMock);
     }
@@ -144,8 +122,6 @@ public interface WithMockito extends WithArgumentMatchers {
     /**
      * @see Mockito#mockConstruction(Class, MockedConstruction.MockInitializer)
      */
-    @Incubating
-    @CheckReturnValue
     default <T> MockedConstruction<T> mockConstruction(final Class<T> classToMock, final MockedConstruction.MockInitializer<T> mockInitializer) {
         return Mockito.mockConstruction(classToMock, mockInitializer);
     }
@@ -153,8 +129,6 @@ public interface WithMockito extends WithArgumentMatchers {
     /**
      * @see Mockito#mockConstruction(Class, MockSettings)
      */
-    @Incubating
-    @CheckReturnValue
     default <T> MockedConstruction<T> mockConstruction(final Class<T> classToMock, final MockSettings mockSettings) {
         return Mockito.mockConstruction(classToMock, mockSettings);
     }
@@ -162,8 +136,6 @@ public interface WithMockito extends WithArgumentMatchers {
     /**
      * @see Mockito#mockConstruction(Class, Function)
      */
-    @Incubating
-    @CheckReturnValue
     default <T> MockedConstruction<T> mockConstruction(final Class<T> classToMock, final Function<MockedConstruction.Context, MockSettings> mockSettingsFactory) {
         return Mockito.mockConstruction(classToMock, mockSettingsFactory);
     }
@@ -171,8 +143,6 @@ public interface WithMockito extends WithArgumentMatchers {
     /**
      * @see Mockito#mockConstruction(Class, MockSettings, MockedConstruction.MockInitializer)
      */
-    @Incubating
-    @CheckReturnValue
     default <T> MockedConstruction<T> mockConstruction(final Class<T> classToMock, final MockSettings mockSettings, final MockedConstruction.MockInitializer<T> mockInitializer) {
         return Mockito.mockConstruction(classToMock, mockSettings, mockInitializer);
     }
@@ -180,8 +150,6 @@ public interface WithMockito extends WithArgumentMatchers {
     /**
      * @see Mockito#mockConstruction(Class, Function, MockedConstruction.MockInitializer)
      */
-    @Incubating
-    @CheckReturnValue
     default <T> MockedConstruction<T> mockConstruction(final Class<T> classToMock, final Function<MockedConstruction.Context, MockSettings> mockSettingsFactory, final MockedConstruction.MockInitializer<T> mockInitializer) {
         return Mockito.mockConstruction(classToMock, mockSettingsFactory, mockInitializer);
     }
@@ -189,7 +157,6 @@ public interface WithMockito extends WithArgumentMatchers {
     /**
      * @see Mockito#when(T)
      */
-    @CheckReturnValue
     default <T> OngoingStubbing<T> when(final T methodCall) {
         return Mockito.when(methodCall);
     }
@@ -197,7 +164,6 @@ public interface WithMockito extends WithArgumentMatchers {
     /**
      * @see Mockito#verify(T)
      */
-    @CheckReturnValue
     default <T> T verify(final T mock) {
         return Mockito.verify(mock);
     }
@@ -205,7 +171,6 @@ public interface WithMockito extends WithArgumentMatchers {
     /**
      * @see Mockito#verify(T, VerificationMode)
      */
-    @CheckReturnValue
     default <T> T verify(final T mock, final VerificationMode mode) {
         return Mockito.verify(mock, mode);
     }
@@ -257,7 +222,6 @@ public interface WithMockito extends WithArgumentMatchers {
     /**
      * @see Mockito#doThrow(Throwable...)
      */
-    @CheckReturnValue
     default Stubber doThrow(final Throwable... toBeThrown) {
         return Mockito.doThrow(toBeThrown);
     }
@@ -265,7 +229,6 @@ public interface WithMockito extends WithArgumentMatchers {
     /**
      * @see Mockito#doThrow(Class)
      */
-    @CheckReturnValue
     default Stubber doThrow(final Class<? extends Throwable> toBeThrown) {
         return Mockito.doThrow(toBeThrown);
     }
@@ -275,7 +238,6 @@ public interface WithMockito extends WithArgumentMatchers {
      */
     // Additional method helps users of JDK7+ to hide heap pollution / unchecked generics array creation
     @SuppressWarnings({"unchecked", "varargs"})
-    @CheckReturnValue
     default Stubber doThrow(final Class<? extends Throwable> toBeThrown, final Class<? extends Throwable>... toBeThrownNext) {
         return Mockito.doThrow(toBeThrown, toBeThrownNext);
     }
@@ -283,7 +245,6 @@ public interface WithMockito extends WithArgumentMatchers {
     /**
      * @see Mockito#doCallRealMethod()
      */
-    @CheckReturnValue
     default Stubber doCallRealMethod() {
         return Mockito.doCallRealMethod();
     }
@@ -291,7 +252,6 @@ public interface WithMockito extends WithArgumentMatchers {
     /**
      * @see Mockito#doAnswer(Answer)
      */
-    @CheckReturnValue
     default Stubber doAnswer(final Answer answer) {
         return Mockito.doAnswer(answer);
     }
@@ -299,7 +259,6 @@ public interface WithMockito extends WithArgumentMatchers {
     /**
      * @see Mockito#doNothing()
      */
-    @CheckReturnValue
     default Stubber doNothing() {
         return Mockito.doNothing();
     }
@@ -307,7 +266,6 @@ public interface WithMockito extends WithArgumentMatchers {
     /**
      * @see Mockito#doReturn(Object)
      */
-    @CheckReturnValue
     default Stubber doReturn(final Object toBeReturned) {
         return Mockito.doReturn(toBeReturned);
     }
@@ -316,7 +274,6 @@ public interface WithMockito extends WithArgumentMatchers {
      * @see Mockito#doReturn(Object, Object...)
      */
     @SuppressWarnings({"unchecked", "varargs"})
-    @CheckReturnValue
     default Stubber doReturn(final Object toBeReturned, final Object... toBeReturnedNext) {
         return Mockito.doReturn(toBeReturned, toBeReturnedNext);
     }
@@ -324,7 +281,6 @@ public interface WithMockito extends WithArgumentMatchers {
     /**
      * @see Mockito#inOrder(Object...)
      */
-    @CheckReturnValue
     default InOrder inOrder(final Object... mocks) {
         return Mockito.inOrder(mocks);
     }
@@ -339,7 +295,6 @@ public interface WithMockito extends WithArgumentMatchers {
     /**
      * @see Mockito#times(int)
      */
-    @CheckReturnValue
     default VerificationMode times(final int wantedNumberOfInvocations) {
         return Mockito.times(wantedNumberOfInvocations);
     }
@@ -347,7 +302,6 @@ public interface WithMockito extends WithArgumentMatchers {
     /**
      * @see Mockito#never()
      */
-    @CheckReturnValue
     default VerificationMode never() {
         return Mockito.never();
     }
@@ -355,7 +309,6 @@ public interface WithMockito extends WithArgumentMatchers {
     /**
      * @see Mockito#atLeastOnce()
      */
-    @CheckReturnValue
     default VerificationMode atLeastOnce() {
         return Mockito.atLeastOnce();
     }
@@ -363,7 +316,6 @@ public interface WithMockito extends WithArgumentMatchers {
     /**
      * @see Mockito#atLeast(int)
      */
-    @CheckReturnValue
     default VerificationMode atLeast(final int minNumberOfInvocations) {
         return Mockito.atLeast(minNumberOfInvocations);
     }
@@ -371,7 +323,6 @@ public interface WithMockito extends WithArgumentMatchers {
     /**
      * @see Mockito#atMostOnce()
      */
-    @CheckReturnValue
     default VerificationMode atMostOnce() {
         return Mockito.atMostOnce();
     }
@@ -379,7 +330,6 @@ public interface WithMockito extends WithArgumentMatchers {
     /**
      * @see Mockito#atMost(int)
      */
-    @CheckReturnValue
     default VerificationMode atMost(final int maxNumberOfInvocations) {
         return Mockito.atMost(maxNumberOfInvocations);
     }
@@ -387,7 +337,6 @@ public interface WithMockito extends WithArgumentMatchers {
     /**
      * @see Mockito#calls(int)
      */
-    @CheckReturnValue
     default VerificationMode calls(final int wantedNumberOfInvocations) {
         return Mockito.calls(wantedNumberOfInvocations);
     }
@@ -395,7 +344,6 @@ public interface WithMockito extends WithArgumentMatchers {
     /**
      * @see Mockito#only()
      */
-    @CheckReturnValue
     default VerificationMode only() {
         return Mockito.only();
     }
@@ -403,7 +351,6 @@ public interface WithMockito extends WithArgumentMatchers {
     /**
      * @see Mockito#timeout(long)
      */
-    @CheckReturnValue
     default VerificationWithTimeout timeout(final long millis) {
         return Mockito.timeout(millis);
     }
@@ -411,7 +358,6 @@ public interface WithMockito extends WithArgumentMatchers {
     /**
      * @see Mockito#after(long)
      */
-    @CheckReturnValue
     default VerificationAfterDelay after(final long millis) {
         return Mockito.after(millis);
     }
@@ -426,7 +372,6 @@ public interface WithMockito extends WithArgumentMatchers {
     /**
      * @see Mockito#withSettings()
      */
-    @CheckReturnValue
     default MockSettings withSettings() {
         return Mockito.withSettings();
     }
@@ -434,7 +379,6 @@ public interface WithMockito extends WithArgumentMatchers {
     /**
      * @see Mockito#description(String)
      */
-    @CheckReturnValue
     default VerificationMode description(final String description) {
         return Mockito.description(description);
     }
@@ -442,8 +386,6 @@ public interface WithMockito extends WithArgumentMatchers {
     /**
      * @see Mockito#framework()
      */
-    @Incubating
-    @CheckReturnValue
     default MockitoFramework framework() {
         return Mockito.framework();
     }
@@ -451,8 +393,6 @@ public interface WithMockito extends WithArgumentMatchers {
     /**
      * @see Mockito#mockitoSession()
      */
-    @Incubating
-    @CheckReturnValue
     default MockitoSessionBuilder mockitoSession() {
         return Mockito.mockitoSession();
     }
@@ -460,7 +400,6 @@ public interface WithMockito extends WithArgumentMatchers {
     /**
      * @see Mockito#lenient()
      */
-    @Incubating
     default LenientStubber lenient() {
         return Mockito.lenient();
     }
