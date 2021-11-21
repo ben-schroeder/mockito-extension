@@ -204,15 +204,6 @@ public interface WithMockito extends WithArgumentMatchers {
     }
 
     /**
-     * @see Mockito#verifyZeroInteractions(Object...)
-     * @deprecated Since 3.0.1. Please migrate your code to {@link #verifyNoInteractions(Object...)}
-     */
-    @Deprecated
-    default void verifyZeroInteractions(final Object... mocks) {
-        Mockito.verifyNoMoreInteractions(mocks);
-    }
-
-    /**
      * @see Mockito#verifyNoInteractions(Object...)
      */
     default void verifyNoInteractions(final Object... mocks) {
