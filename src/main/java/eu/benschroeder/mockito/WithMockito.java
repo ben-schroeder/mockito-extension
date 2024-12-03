@@ -29,6 +29,34 @@ import java.util.function.Function;
 public interface WithMockito extends WithArgumentMatchers {
 
     /**
+     * @see Mockito#mock(Object[]) 
+     */
+    default <T> T mock(T... reified) {
+        return Mockito.mock(reified);
+    }
+
+    /**
+     * @see Mockito#mock(Answer, Object[]) 
+     */
+    default <T> T mock(@SuppressWarnings("rawtypes") Answer defaultAnswer, T... reified) {
+        return Mockito.mock(defaultAnswer, reified);
+    }
+    
+    /**
+     * @see Mockito#mock(String, Object[]) 
+     */
+    default <T> T mock(String name, T... reified) {
+        return Mockito.mock(name, reified);
+    }
+
+    /**
+     * @see Mockito#mock(MockSettings, Object[]) 
+     */
+    default  <T> T mock(MockSettings settings, T... reified) {
+        return Mockito.mock(settings, reified);
+    }
+    
+    /**
      * @see Mockito#mock(Class)
      */
     default <T> T mock(final Class<T> classToMock) {
@@ -75,6 +103,13 @@ public interface WithMockito extends WithArgumentMatchers {
      */
     default <T> T spy(final Class<T> classToSpy) {
         return Mockito.spy(classToSpy);
+    }
+
+    /**
+     * @see Mockito#spy(Object[])
+     */
+    default <T> T spy(T... reified) {
+        return Mockito.spy(reified);
     }
 
     /**

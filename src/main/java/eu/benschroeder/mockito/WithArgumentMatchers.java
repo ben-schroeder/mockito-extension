@@ -2,11 +2,13 @@ package eu.benschroeder.mockito;
 
 import org.mockito.ArgumentMatcher;
 import org.mockito.ArgumentMatchers;
+import org.mockito.ThrowingConsumer;
 
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.function.Consumer;
 import java.util.regex.Pattern;
 
 /**
@@ -223,17 +225,37 @@ public interface WithArgumentMatchers {
     }
 
     /**
+     * @see ArgumentMatchers#isNull(Class) ()
+     */
+    default  <T> T isNull(final Class<T> type) {
+        return ArgumentMatchers.isNull(type);
+    }
+    
+    /**
      * @see ArgumentMatchers#notNull()
      */
     default <T> T notNull() {
         return ArgumentMatchers.notNull();
     }
-
+    
+    /**
+     * @see ArgumentMatchers#notNull(Class)
+     */
+    default <T> T notNull(Class<T> type) {
+        return ArgumentMatchers.notNull(type);
+    }
     /**
      * @see ArgumentMatchers#isNotNull()
      */
     default <T> T isNotNull() {
         return ArgumentMatchers.isNotNull();
+    }
+
+    /**
+     * @see ArgumentMatchers#isNotNull(Class)
+     */
+    default  <T> T isNotNull(Class<T> type) {
+        return ArgumentMatchers.isNotNull(type);
     }
 
     /**
@@ -285,6 +307,20 @@ public interface WithArgumentMatchers {
         return ArgumentMatchers.argThat(matcher);
     }
 
+    /**
+     * @see ArgumentMatchers#assertArg(Consumer) 
+     */
+    default <T> T assertArg(Consumer<T> consumer) {
+        return ArgumentMatchers.assertArg(consumer);
+    }
+
+    /**
+     * @see ArgumentMatchers#assertArg(ThrowingConsumer)
+     */
+    default <T> T assertArg(ThrowingConsumer<T> consumer) {
+        return ArgumentMatchers.assertArg(consumer);
+    }
+    
     /**
      * @see ArgumentMatchers#charThat(ArgumentMatcher)
      */
